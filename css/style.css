@@ -1,11 +1,217 @@
+/* General Body Styles */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #ece7e1;
-  cursor: default;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('../images/valo_main_back.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
 }
 
-/*-----------------------  Navigation  -----------------------*/
+/* Navigation */
+/* Nav Container */
+nav {
+  background-color: rgba(10, 10, 10, 0.9);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
 
+/* Nav List */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* spacing between links */
+}
+
+/* Nav Items */
+nav ul li {
+  position: relative;
+}
+
+/* Nav Links */
+nav ul li a {
+  color: #ff4655;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 0;
+  display: inline-block;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Underline Effect */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff4655;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Hover & Focus */
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #fff;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after {
+  width: 100%;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+}
+
+
+/* Header Section */
+.indexHeader {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.indexHeader p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.indexHeader h1 {
+  font-size: 64px;
+  color: #ff4655;
+  text-shadow: 0 0 15px rgba(255, 70, 85, 0.8);
+  margin: 0;
+}
+
+/* Sections: Intro, Agents, Maps */
+.valorantIntro,
+.agentsIntro,
+.mapsIntro {
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 20px 0;
+}
+
+/* Flex containers */
+.introColumn,
+.agentsColumn,
+.mapsColumn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Left and Right columns */
+.introLeft,
+.agentsRight,
+.mapsLeft {
+  flex: 1 1 500px;
+}
+
+.introRight,
+.agentsLeft {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+/* Images */
+.introRight img,
+.agentsLeft img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.3);
+}
+
+/* Headings */
+h1,
+h2 {
+  color: #ff4655;
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.6);
+}
+
+/* Paragraph */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Links */
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ff4655;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* Responsive for tablets and below */
+@media (max-width: 768px) {
+  .indexHeader h1 {
+    font-size: 40px;
+  }
+
+  .introColumn,
+  .agentsColumn,
+  .mapsColumn {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/*-----------------------  Agents-page  -----------------------*/
+
+/* General body and background */
+body {
+  background-image: url('../images/valo_main_back.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+/* Navigation */
 nav {
   background-color: #111111;
   padding: 15px;
@@ -13,295 +219,124 @@ nav {
 }
 
 nav ul {
+  list-style-type: none;
   margin: 0 auto;
-  padding: 5px 0px;
+  padding: 0;
   display: flex;
-  list-style: none;
-}
-
-nav a {
-  padding: 20px;
-  text-transform: uppercase;
-  color: #ece7e1;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  border-bottom: 2px solid #ff4655;
-}
-
-/*-----------------------  Footer  -----------------------*/
-
-footer {
-  background-color: #111111;
-  color: #7c7e82;
-  text-align: center;
-  padding: 20px;
-}
-
-footer p {
-  padding: 0 37% 0 37%;
-  font-size: 80%;
-}
-
-footer span {
-  text-transform: uppercase;
-}
-
-/*-----------------------  IndexHeader  -----------------------*/
-
-.indexHeader {
-  color: #ece7e1;
-  height: 800px;
-  padding: 1px;
-  background-image: url(/images/valoarant_main.jpg);
-  background-position: 50% 85%;
-  display: flex;
-  flex-flow: column;
   justify-content: center;
-  align-items: center;
+  gap: 30px;
 }
 
-.indexHeader p {
-  font-weight: bold;
-}
-
-.indexHeader h1 {
-  font-size: 800%;
-  margin: 0 0 30px 0;
-}
-
-.indexHeader a {
+nav ul li a {
+  color: white;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 95%;
-  text-transform: uppercase;
-  color: #ece7e1;
-  background-color: #ff4654;
-  padding: 15px 60px;
-  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-.indexHeader a:hover {
-  background-color: #0f1923;
-  transition: 0.5s;
+nav ul li a:hover {
+  color: #ff4655; /* Valorant red accent */
 }
 
-/*-----------------------  Index-valorantIntro  -----------------------*/
-
-.valorantIntro {
-  width: 100%;
-  margin: 80px 0 80px 0px;
-}
-
-.valorantIntro h1 {
-  color: #0f1922;
-  text-transform: uppercase;
-  font-size: 400%;
-}
-
-.introColumn {
-  display: flex;
-  flex-flow: row;
-}
-
-#intro {
-  margin-left: 450px;
-}
-
-.introLeft {
-  width: 15%;
-  margin-left: 530px;
-}
-
-.introRight {
-  width: 50%;
-  text-align: center;
-}
-
-p {
-  line-height: 150%;
-}
-
-.introLeft h2 {
-  color: #383e3a;
-  text-transform: uppercase;
-}
-
-.introLeft p {
-  color: #7f8286;
-  padding-bottom: 30px;
-  border-bottom: solid 1px black;
-}
-
-.introLeft span {
-  text-transform: uppercase;
-}
-
-.introRight img {
-  height: 400px;
-  width: 700px;
-}
-
-/*-----------------------  Index-agentsIntro  -----------------------*/
-
-.agentsIntro {
-  width: 100%;
-  background-color: #ff4654;
-  margin-bottom: -80px;
-}
-
-.agentsColumn {
-  display: flex;
-  flex-flow: row-reverse;
-  align-items: center;
-  padding: 20px;
-}
-
-.agentsLeft {
-  width: 35%;
-}
-
-.agentsRight {
-  width: 45%;
-}
-
-.agentsRight h1 {
-  font-size: 400%;
-  margin: 0 0 30px 0;
-  color: #ece7e1;
-  text-transform: uppercase;
-}
-
-.agentsRight h2 {
-  color: #ece7e1;
-  text-transform: uppercase;
-}
-
-.agentsRight p {
-  color: #ece7e1;
-}
-
-.agentsLeft img {
-  width: 300px;
-  height: 600px;
-}
-
-.agentsSub {
-  width: 40%;
-  margin-bottom: 60px;
-}
-
-.agentsRight a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 95%;
-  text-transform: uppercase;
-  color: #0f1923;
-  background-color: #ece7e1;
-  padding: 15px 60px;
-  border-radius: 5px;
-}
-
-.agentsRight a:hover {
-  background-color: #0f1923;
-  color: #ece7e1;
-  transition: 0.5s;
-}
-
-/*-----------------------  Index-mapsIntro  -----------------------*/
-
-.mapsIntro {
-  height: 700px;
-  width: 100%;
-  background-image: url(/images/val_map.jpg);
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
-.mapsIntro h1 {
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 400%;
-}
-
-.mapsColumn {
-  display: flex;
-  flex-flow: row;
-  margin: 80px 0 0px 450px;
-}
-
-.mapsLeft {
-  width: 25%;
-  margin-top: 120px;
-  border-bottom: solid 1px black;
-}
-
-.mapsLeft h2 {
-  color: #000000;
-  text-transform: uppercase;
-}
-
-.mapsLeft p {
-  color: #000000;
-  padding-bottom: 30px;
-}
-
-
-/*-----------------------  Agents-page  -----------------------*/
-
-.agentsImages {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 30px 50px 50px 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Figure to wrap image + caption */
-.agentsImages figure {
-  padding: 20px;
-  box-sizing: border-box;
-  width: 25%; /* same as your img width */
-  margin: 0;  /* remove default figure margin */
-  text-align: center; /* center the figcaption text */
-}
-
-.agentsImages img {
-  width: 100%; /* fill figure width */
-  height: auto;
+/* Main content container */
+.agentsMainColumn {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* translucent black */
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: block;
-  margin: 0 auto; /* center image inside figure */
 }
 
-/* Style for the agent name below each image */
-.agentsImages figcaption {
-  margin-top: 8px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  color: black;
-  font-weight: bold;
-}
-.agentsMainText {
-  margin-left:70px;
-  width: 90%;
-  border-bottom: 1px solid black;
-  margin-top: 70px;
-}
-
+/* Agents description text */
 .agentsMainText h2 {
-  color: #160b0b;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ff4655; /* Valorant red accent */
+  text-align: center;
 }
 
 .agentsMainText p {
-  color: #000000;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  color: #ddd;
 }
+
+/* Grid container for agents */
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Each agent card */
+.agent-card {
+  background-color: rgba(17, 17, 17, 0.85);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agent-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.8);
+}
+
+/* Agent image */
+.agent-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #ff4655;
+}
+
+/* Caption */
+.agent-card figcaption {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 12px 15px 8px 15px;
+  color: #ff4655;
+}
+
+/* Agent info */
+.agent-info {
+  padding: 0 15px 15px 15px;
+}
+
+.role {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffa0a5;
+  margin-bottom: 5px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  background-color: #111111;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 60px;
+}
+
+footer span {
+  color: #ff4655;
+  font-weight: 700;
+}
+
+
+
+
 
 
 /*-----------------------  Specs-page  -----------------------*/
@@ -431,150 +466,46 @@ p {
   margin-bottom: 100px;
 }
 
-/*-----------------------  Signup-page  -----------------------*/
+/*-----------------------  Song-page  -----------------------*/
 
-.signupWrapper {
-  background-image: url(../images/valorantbg.jpg);
-  background-position: center top;
-  padding-bottom: 80px;
+.song-section {
+  padding: 60px 20px;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(5px);
+  border-top: 3px solid #ff4655;
+  border-bottom: 3px solid #ff4655;
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.3);
 }
 
-.accountIntro {
-  color: #ece7e1;
-  font-size: 200%;
+.song-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: #ff4655;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.6);
   text-transform: uppercase;
-  padding: 10px;
-  margin-left: 120px;
-  width: 30%;
 }
 
-.formBlock {
-  margin-left: 80px;
-  background-color: #ece7e1;
-  width: 25%;
-  padding: 30px;
-  border-radius: 5px;
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 10px;
 }
 
-.emailIntro {
-  text-transform: uppercase;
-  padding: 10px;
-  color: #1a1a1a;
+.song-grid iframe {
+  width: 100%;
+  height: 352px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.email input {
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #ededed;
-}
-
-.newsletter {
-  color: #1a1a1a;
-  padding: 10px;
-  margin-bottom: 50px;
-}
-
-.email {
-  padding: 10px;
-}
-
-.ageIntro h1 {
-  text-transform: uppercase;
-  padding: 10px;
-  color: #1a1a1a;
-}
-
-.ageIntro p {
-  color: #1a1a1a;
-  font-size: 120%;
-  margin-left: 10px;
-}
-
-.age label {
-  color: #1a1a1a;
-  padding: 10px;
-}
-
-.age {
-  margin-bottom: 50px;
-}
-
-.usernameIntro h1 {
-  text-transform: uppercase;
-  padding: 10px;
-  color: #1a1a1a;
-}
-
-.usernameIntro p {
-  color: #1a1a1a;
-  font-size: 120%;
-  margin-left: 10px;
-}
-
-.username input {
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #ededed;
-}
-
-.username {
-  margin-left: 10px;
-  margin-bottom: 50px;
-}
-
-.passwordIntro h1 {
-  text-transform: uppercase;
-  padding: 10px;
-  color: #1a1a1a;
-}
-
-.passwordIntro p {
-  color: #1a1a1a;
-  font-size: 120%;
-  margin-left: 10px;
-}
-
-.password input {
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #ededed;
-}
-
-.password {
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
-
-.passwordCheck input {
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #ededed;
-}
-
-.passwordCheck {
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
-
-.submit {
-  padding: 10px;
-  margin-top: 20px;
-}
-
-.submit input {
-  background-color: #ff4655;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.submit input:hover {
-  background-color: #0f1923;
-  transition: 0.5s;
+.song-grid iframe:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(255, 70, 85, 0.6);
 }
